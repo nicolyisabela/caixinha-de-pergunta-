@@ -1,41 +1,47 @@
 body {
-     background-color: hsl(303, 77%, 49%);
+     background-color: hsla(287, 72%, 52%, 0.562);
      font-family: "Emilys Candy", serif;
 }
 
 footer {
-     background-color: hsla(246, 68%, 63%, 0.226);
-     color: hsl(340, 80%, 48%);
+     background-color: rgba(135, 26, 224, 0.541);
+     color: rgba(127, 15, 202, 0.705);
      position: fixed;
-     bottom: 0;
      width: 100%;
      height: 2rem;
 }
 
 footer p {
      text-align: center;
-     font: 0.6rem;
-     margin-top: 0.5rem;
-}
-.cartao {
-     margin: 1rem 1rem;
-     background-color: hsl(271, 50%, 37%);
-     height: 20rem;
-     flex-grow; 1;
-     flex-basis; calc(33 - 6rem);
-}
-.cartao_conteudo{
-     text-align: center;
-     background-color: hsl(33, 100%, 88%);
-     height: 100%;
-}
-.cartao_conteudo h3{
-     background-color: hsl(0, 0%, 0%);
-     color: hwb(46 22% 43%);
-     text-align: left;
-     padding: 0.5;
-     position: absolute;
-     margin: 0.6;border-radius: 0.6;
-     font-size: 1vw;
+     font: 0.7rem;
+     margin-top: 0.8rem;
 }
 
+#container {
+     display: flex;
+}
+
+.cartao {
+     margin: 2rem 2rem;
+     background-color: hsla(287, 76%, 50%, 0.705);
+     height: 20rem;
+     flex-grow:2;
+     flex-basis: calc(33 - 0.6rem)
+}
+
+.cartao_conteudo {
+     text-align: center;
+     background-color: hsla(287, 81%, 51%, 0.459);
+     height: 100%;
+}
+
+.cartao_conteudo h3 {
+     background-color: hsla(287, 74%, 50%, 0.616);
+     color: hwb(286 11% 16% / 0.534);
+     text-align: left;
+     padding: 0.4;
+     position: absolute;
+     margin: 0.3;
+     border-radius: 0.4;
+     font-size: 2vw;
+}
