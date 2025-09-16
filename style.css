@@ -1,11 +1,11 @@
 body {
-     background-color: hsla(287, 72%, 52%, 0.562);
+     background-color: url('img/bg-desktop.webp');
      font-family: "Emilys Candy", serif;
 }
 
 footer {
      background-color: rgba(135, 26, 224, 0.541);
-     color: rgba(127, 15, 202, 0.705);
+     color: rgba(186, 107, 238, 0.705);
      position: fixed;
      width: 100%;
      height: 2rem;
@@ -13,8 +13,8 @@ footer {
 
 footer p {
      text-align: center;
-     font: 0.7rem;
-     margin-top: 0.8rem;
+     font: 0.4rem;
+     margin-top: 0.5rem;
 }
 
 #container {
@@ -44,4 +44,11 @@ footer p {
      margin: 0.3;
      border-radius: 0.4;
      font-size: 2vw;
+}
+
+
+:root {
+    --text-color: #DBE4EF;
+    --card-front-color: #144480;
+    --card-back-color: #00F4BF;
 }
