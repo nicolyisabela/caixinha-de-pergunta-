@@ -1,8 +1,13 @@
 function criarCartao(categoria, pergunta, resposta) {
    let contener = document.getElementById('container')
    let cartao = document.createElement('article')
+   let respostaEstaVisivel = false
+   function viraCartao(){
+              respostaEstaVisivel = !respostaEstaViosivel
+   }
+   let respostaEstaViosivel = true 
    cartao.className = 'cartao'
-cartao.innerHTML = 
+   cartao.innerHTML = `
      <div class="cartao_conteudo">
           <h3>Tudo sobre Dog</h3>
           <div class="cartao_conteudo_perguntas">
@@ -13,4 +18,8 @@ cartao.innerHTML =
             desparasitação, o protocolo de prevenção de pulgas e carrapatos, e a melhor dieta para o pet.
           </div>
         </div>
+      `
+        ContainerRule.appendChild(cartao)
+        
+        
 }
