@@ -1,25 +1,27 @@
 function criarCartao(categoria, pergunta, resposta) {
    let contener = document.getElementById('container')
    let cartao = document.createElement('article')
-   let respostaEstaVisivel = false
-   function viraCartao(){
-              respostaEstaVisivel = !respostaEstaViosivel
-   }
-   let respostaEstaViosivel = true 
    cartao.className = 'cartao'
-   cartao.innerHTML = `
+
+    cartao.innerHTML = `
      <div class="cartao_conteudo">
-          <h3>Tudo sobre Dog</h3>
+          <h3>${categoria}</h3>
           <div class="cartao_conteudo_perguntas">
-            Quais perguntas devo fazer ao veterinário na primeira consulta?
+            <p>${pergunta}</p>
           </div>
           <div class="cartao_conteudo_respostas">
-            Na primeira consulta veterinária, pergunte sobre a saúde geral do seu animal, o calendário de vacinação e
-            desparasitação, o protocolo de prevenção de pulgas e carrapatos, e a melhor dieta para o pet.
+           <p>${resposta}</p>
           </div>
         </div>
       `
         ContainerRule.appendChild(cartao)
         
-        
-}
+
+ let respostaEstaVisivel = false
+   function viraCartao() {
+     respostaEstaVisivel = !respostaEstaViosivel
+     cartao.classeList.toggle('ative', respostaEstaViosivel)
+ }
+ cartao.addEventlistener('click', viraCartao)  
+
+  }
