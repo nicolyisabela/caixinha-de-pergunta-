@@ -94,5 +94,5 @@ footer p {
 
 @media(max-width: 560px){
      body{
-          background: url('imag/bg-mobile.whep');
+          background: url("imag/bg-mobile.whep");
 }
