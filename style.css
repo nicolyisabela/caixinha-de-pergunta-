@@ -7,12 +7,7 @@
 
 body {
   font-family: "Emilys Candy", serif;
-  background: url('img/bg-desktop.webp') no-repeat center center fixed;
-  background-size: cover;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  background: url('img/bg-desktop.webp')
 }
 
 main {
@@ -27,28 +22,20 @@ main {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 2rem;
-  max-width: 1200px;
-  width: 100%;
 }
 
 .cartao {
+  margin: 1rem 1rem 
   background-color: rgb(223, 46, 223);
-  width: 300px;
-  height: 350px;
-  border-radius: 1rem;
-  overflow: hidden;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.3s ease-in-out;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  height: 75rem;
+  flex-grow: 1 0 calc(100% - 1rem);
+  flex-basis: cals(33% - 6rem);
 }
 
-/* Efeito de hover: o cartão gira 180 graus */
 .cartao:hover {
   transform: rotateY(180deg);
 }
 
-/* Estilo do conteúdo do cartão */
 .cartao_conteudo {
   position: relative;
   width: 100%;
@@ -56,59 +43,51 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center; /* Centraliza horizontalmente */
+  align-items: center; 
   text-align: center;
   background-color: var(--card-front-color);
   padding: 1rem;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s;
 }
 
-/* Título do cartão */
 .cartao_conteudo h3 {
-  color: #fff;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  font-weight: bold;
-}
-
-/* Perguntas no cartão */
-.cartao_conteudo_perguntas {
-  color: var(--text-color);
-  font-size: 1rem;
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-
-/* Respostas no cartão */
-.cartao_conteudo_respostas {
-  color: var(--card-back-color);
-  font-size: 1rem;
-  font-weight: 700;
-  visibility: hidden; /* A resposta começa invisível */
-  padding: 1rem;
-  background-color: var(--card-back-color);
+  color: hsl(271, 87%, 44%);
+  border: 1px solid var(--text-color);
+  text-align: left;
+  padding: 0.5rem
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden; /* Esconde o conteúdo de trás */
-  transform: rotateY(180deg); /* Resposta começa virada */
+  margin 1rem;
+  boder-radius: 0.6rem;
+  font-size: 3vw;
+  backface-visibility: hidden;
 }
 
-/* Torna a resposta visível quando o hover acontece */
-.cartao:hover .cartao_conteudo_respostas {
-  visibility: visible; /* Torna visível */
+.cartao_conteudo_perguntas p{
+  color: var(--text-color);
+  font-weight: 500;
+  text-align: center;
+  align-items: center;
 }
 
-/* Cores e variáveis */
+.cartao_conteudo_respostas p {
+  color: var(--card-back-color);
+  font-weight: 700;
+  margin-top: 4rem;
+  font-size: 2.8vw;
+  text-align: center;
+  align-items: center;
+}
+
+.cartao:hover .cartao_conteudo {
+ transform: rotateY(180deg)
+}
+
 :root {
   --text-color: #ff0b85;
   --card-front-color: #cd10df;
   --card-back-color: #ff08c9;
 }
 
-/* Estilos do rodapé */
 footer {
   background-color: rgb(208, 67, 221);
   color: rgba(28, 28, 29, 0.705);
@@ -116,9 +95,7 @@ footer {
   bottom: 0;
   width: 100%;
   height: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+ 
 }
 
 footer p {
@@ -127,7 +104,6 @@ footer p {
   margin-top: 0.5rem;
 }
 
-/* Ajustes para dispositivos móveis */
 @media (max-width: 560px) {
   body {
     background: url("imag/bg-mobile.webp") no-repeat center center fixed;
