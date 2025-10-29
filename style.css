@@ -1,121 +1,136 @@
-
-* {
+/* ==== ESTILO GERAL ==== */
+body {
+  background-color: #eb78f5cb;
+  font-family: "Emilys Candy", cursive;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Emilys Candy", serif;
-  background: url('img/bg-desktop.webp')
-}
-
-main {
-  display: flex;
-  justify-content: center;
-  flex: 1;
-  padding: 2rem;
-}
-
-#container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 2rem;
-}
-
-.cartao {
-  margin: 1rem 1rem 
-  background-color: rgb(223, 46, 223);
-  height: 75rem;
-  flex-grow: 1 0 calc(100% - 1rem);
-  flex-basis: cals(33% - 6rem);
-}
-
-.cartao:hover {
-  transform: rotateY(180deg);
-}
-
-.cartao_conteudo {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; 
-  text-align: center;
-  background-color: var(--card-front-color);
-  padding: 1rem;
-  transition: transform 0.3s;
-}
-
-.cartao_conteudo h3 {
-  color: hsl(271, 87%, 44%);
-  border: 1px solid var(--text-color);
-  text-align: left;
-  padding: 0.5rem
-  position: absolute;
-  margin 1rem;
-  boder-radius: 0.6rem;
-  font-size: 3vw;
-  backface-visibility: hidden;
-}
-
-.cartao_conteudo_perguntas p{
-  color: var(--text-color);
-  font-weight: 500;
-  text-align: center;
-  align-items: center;
-}
-
-.cartao_conteudo_respostas p {
-  color: var(--card-back-color);
-  font-weight: 700;
-  margin-top: 4rem;
-  font-size: 2.8vw;
-  text-align: center;
-  align-items: center;
-}
-
-.cartao:hover .cartao_conteudo {
- transform: rotateY(180deg)
-}
-
-:root {
-  --text-color: #ff0b85;
-  --card-front-color: #cd10df;
-  --card-back-color: #ff08c9;
 }
 
 footer {
-  background-color: rgb(208, 67, 221);
-  color: rgba(28, 28, 29, 0.705);
+  background-color: rgba(204, 58, 240, 0.87);
+  color: rgb(250, 246, 246);
   position: fixed;
   bottom: 0;
   width: 100%;
   height: 2rem;
- 
 }
 
 footer p {
-  font-size: 0.8rem;
   text-align: center;
+  font-size: 0.6rem;
   margin-top: 0.5rem;
+}
+
+/* ==== CONTAINER ==== */
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 4rem;
+  gap: 3rem;
+}
+
+/* ==== CARTÕES ==== */
+.cartao {
+  background-color: transparent;
+  width: 30%;
+  aspect-ratio: 3 / 4; /* mantém proporção */
+  perspective: 1000px; /* necessário para o efeito 3D */
+  position: relative;
+}
+
+/* ==== CONTEÚDO DO CARTÃO ==== */
+.cartao_conteudo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+}
+
+/* ==== EFEITO AO PASSAR O MOUSE ==== */
+.cartao:hover .cartao_conteudo {
+  transform: rotateY(180deg);
+}
+
+/* ==== FACES DO CARTÃO ==== */
+.cartao_conteudo_perguntas,
+.cartao_conteudo_respostas {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Frente (pergunta) */
+.cartao_conteudo_perguntas {
+  background-color: rgba(204, 58, 240, 0.87);
+  color: #fbe9ff;
+  border: 3px solid #e48bee;
+}
+
+/* Verso (resposta) */
+.cartao_conteudo_respostas {
+  background-color: rgba(231, 155, 227, 0.664);
+  border: 4px solid #42014b;
+  color: #42014b;
+  transform: rotateY(180deg);
+}
+
+/* ==== TÍTULO DO CARTÃO ==== */
+.cartao_conteudo h3 {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+  color: #000000;
+  font-size: 1.2rem;
+  background-color: rgb(237, 148, 255);
+  padding: 0.4rem 0.6rem;
+  border-radius: 0.5rem;
+  border: 1px solid hsla(0, 0%, 0%, 0.952);
+  backface-visibility: hidden;
+}
+
+/* ==== TEXTO ==== */
+.cartao_conteudo_perguntas p,
+.cartao_conteudo_respostas p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ==== RESPONSIVO ==== */
+@media (max-width: 900px) {
+  .cartao {
+    width: 45%;
+  }
 }
 
 @media (max-width: 560px) {
   body {
-    background: url("imag/bg-mobile.webp") no-repeat center center fixed;
-    background-size: cover;
+    background: url('img/bg-mobile.webp') no-repeat center center/cover;
   }
 
   #container {
-    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
   }
 
   .cartao {
-    width: 100%;
-    max-width: 300px;
+    width: 80%;
+  }
+
+  .cartao_conteudo_perguntas p,
+  .cartao_conteudo_respostas p {
+    font-size: 1rem;
   }
 }
